@@ -2,11 +2,13 @@
 
 Using Docker in Laravel evelopment
 
+
 docker-compose up -d
 
 docker-compose up -d --force-recreate --no-deps --build
 
 docker system prune --all --volumes
+
 
 docker logs -f --details CONTAINER
 
@@ -22,6 +24,7 @@ docker logs [OPTIONS] CONTAINER
 --timestamps , -t		Show timestamps
 
 --until					API 1.35+
+
 
 
 sudo service docker restart
