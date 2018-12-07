@@ -1,0 +1,50 @@
+    version: '3'
+    services:
+        web7_0:
+            build:
+                context: ./
+                dockerfile: web7_0.docker
+            volumes:
+                - ./:/var/www
+            ports:
+                - "8070:70"
+            links:
+                - app7_0
+        web7_1:
+            build:
+                context: ./
+                dockerfile: web7_1.docker
+            volumes:
+                - ./:/var/www
+            ports:
+                - "8071:71"
+            links:
+                - app7_1
+        web7_2:
+            build:
+                context: ./
+                dockerfile: web7_2.docker
+            volumes:
+                - ./:/var/www
+            ports:
+                - "8072:72"
+            links:
+                - app7_2
+        app7_0:
+            build:
+                context: ./
+                dockerfile: app7_0.docker
+            volumes:
+                - ./:/var/www
+        app7_1:
+            build:
+                context: ./
+                dockerfile: app7_1.docker
+            volumes:
+                - ./:/var/www
+        app7_2:
+            build:
+                context: ./
+                dockerfile: app7_2.docker
+            volumes:
+                - ./:/var/www
