@@ -8,6 +8,7 @@
                 - ./:/var/www
             ports:
                 - "8070:70"
+                - "8088:80"
             links:
                 - app7_0
         web7_1:
@@ -18,6 +19,7 @@
                 - ./:/var/www
             ports:
                 - "8071:71"
+                - "8089:81"
             links:
                 - app7_1
         web7_2:
@@ -28,6 +30,7 @@
                 - ./:/var/www
             ports:
                 - "8072:72"
+                - "8090:82"
             links:
                 - app7_2
         app7_0:
@@ -36,15 +39,27 @@
                 dockerfile: app7_0.docker
             volumes:
                 - ./:/var/www
+            environment:
+                PHP_IDE_CONFIG: "serverName=docker"
+                PHP_XDEBUG_ENABLED: 1 # Set 1 to enable.
+                XDEBUG_CONFIG: remote_host=10.254.254.254
         app7_1:
             build:
                 context: ./
                 dockerfile: app7_1.docker
             volumes:
                 - ./:/var/www
+            environment:
+                PHP_IDE_CONFIG: "serverName=docker"
+                PHP_XDEBUG_ENABLED: 1 # Set 1 to enable.
+                XDEBUG_CONFIG: remote_host=10.254.254.254
         app7_2:
             build:
                 context: ./
                 dockerfile: app7_2.docker
             volumes:
                 - ./:/var/www
+            environment:
+                PHP_IDE_CONFIG: "serverName=docker"
+                PHP_XDEBUG_ENABLED: 1 # Set 1 to enable.
+                XDEBUG_CONFIG: remote_host=10.254.254.254
