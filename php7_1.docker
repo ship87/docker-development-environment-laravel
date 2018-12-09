@@ -1,4 +1,4 @@
-FROM php:7.0-fpm
+FROM php:7.1-fpm
 WORKDIR /var/www
 ADD . /var/www
 
@@ -11,7 +11,3 @@ RUN apt-get update && apt-get install -y mysql-client --no-install-recommends \
 RUN pecl install xdebug \
     && docker-php-ext-enable xdebug
 COPY ./xdebug.ini /usr/local/etc/php/conf.d/
-
-RUN usermod -u 1000 www-data
-
-CMD ["php-fpm"]

@@ -11,6 +11,8 @@ docker-compose up -d\
 docker-compose up -d --force-recreate --no-deps --build\
 docker system prune --all --volumes
 
+docker network inspect bridge - find IP to connect for remote database
+
 docker logs -f --details CONTAINER
 
 docker logs [OPTIONS] CONTAINER
@@ -40,5 +42,4 @@ ls /sys/class/net - find network interface
 
 eth0 - network interface
 
-sudo ip addr add 10.254.254.254/24 brd + dev eth0 label eth0:1
-
+sudo ip addr add 10.254.254.254/24 brd + dev eth0 label eth0:1 - enable Xdebug
