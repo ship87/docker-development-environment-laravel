@@ -11,7 +11,7 @@ docker-compose up -d\
 docker-compose up -d --force-recreate --no-deps --build\
 docker system prune --all --volumes
 
-docker network inspect bridge - find IP to connect for remote database
+docker network inspect bridge - find IP for connect to remote database
 
 docker logs -f --details CONTAINER
 
