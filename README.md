@@ -5,6 +5,10 @@ Using Docker in Laravel development for Ubuntu
 PHP-FPM + Xdebug + Nginx  
 PHP 7.0, 7.1, 7.2
 
+http://localhost:8070/ - PHP 7.0\
+http://localhost:8071/ - PHP 7.1\
+http://localhost:8072/ - PHP 7.2
+
 
 # Docker
 docker-compose up -d\
